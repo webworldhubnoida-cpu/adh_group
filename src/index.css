@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif, "Inter", ui-sans-serif;
+  --font-serif: "Georgia", serif;
+  
+  --color-brand-blue: #0B1221;
+  --color-brand-blue-deep: #0f182b;
+  --color-brand-gold: #D4AF37;
+  --color-brand-gray: #A0AEC0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-blue text-white font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif italic;
+  }
+}
+
+@layer utilities {
+  .editorial-border {
+    @apply border border-[rgba(212,175,55,0.2)];
+  }
+  
+  .editorial-section-title {
+    @apply text-[11px] uppercase tracking-[3px] text-brand-gold mb-4 block font-sans font-bold not-italic;
+  }
+  
+  .editorial-card {
+    @apply bg-white/5 p-6 border-l-2 border-brand-gold;
+  }
+
+  .editorial-glass {
+    @apply bg-brand-blue/90 backdrop-blur-md border-b border-[rgba(212,175,55,0.2)];
+  }
+}
