@@ -30,7 +30,7 @@ export default function FloorPlan() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {FLOOR_PLANS.map((plan, index) => (
             <motion.div
               key={plan.title}
@@ -38,9 +38,9 @@ export default function FloorPlan() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-bg-light rounded-[2rem] p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100"
+              className="group bg-bg-light rounded-[1.5rem] sm:rounded-[2rem] p-3 sm:p-4 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100"
             >
-              <div className="relative overflow-hidden rounded-[1.5rem] bg-white aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-[1rem] sm:rounded-[1.5rem] bg-white aspect-[4/3]">
                 <img 
                   src={plan.image} 
                   alt={plan.title} 

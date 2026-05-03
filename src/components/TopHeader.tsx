@@ -2,30 +2,26 @@ import { Mail, Phone, Twitter, Instagram, Facebook, ShieldCheck } from 'lucide-r
 
 export default function TopHeader() {
   return (
-    <div className="bg-[#0A4D8C] text-white py-2 border-b border-white/10 hidden md:block">
+    <div className="bg-[#0A4D8C] text-white py-2 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
           {/* Left Side: Contact Info & UDYAM */}
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-white/80 border-r border-white/20 pr-6">
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6">
+            <div className="flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white/80 sm:border-r sm:border-white/20 sm:pr-6">
               <ShieldCheck size={14} className="text-light-blue" />
               <span>UDYAM-UP-02-0049128</span>
-              <span>gst: 09FHNPK8416H1ZT</span>
             </div>
-            <a href="mailto:Info@adhgroup.in" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
+            <a href="mailto:Info@adhgroup.in" className="hidden sm:flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
               <Mail size={14} className="text-light-blue group-hover:scale-110 transition-transform" />
               <span>Info@adhgroup.in</span>
             </a>
-            <div className="flex items-center gap-4">
-              <a href="tel:+918937946287" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <a href="tel:+918937946287" className="flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
                 <Phone size={14} className="text-light-blue group-hover:scale-110 transition-transform" />
                 <span>+91 8937946287</span>
               </a>
-              <a href="tel:+919837946287" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group border-l border-white/10 pl-4">
+              <a href="tel:+919837946287" className="hidden xs:flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group border-l border-white/10 pl-3 sm:pl-4">
                 <span>+91 9837946287</span>
-              </a>
-              <a href="tel:+917900990004" className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group border-l border-white/10 pl-4">
-                <span>+91 7900990004</span>
               </a>
             </div>
           </div>

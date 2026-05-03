@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full aspect-[16/9] overflow-hidden">
+    <section className="relative w-full h-[60vh] md:h-screen min-h-[500px] overflow-hidden">
 
       {/* BACKGROUND SLIDER */}
       <AnimatePresence>

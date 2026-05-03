@@ -34,7 +34,7 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           {PROJECTS.map((project, index) => (
             <motion.div
               key={project.title}
@@ -42,7 +42,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group relative overflow-hidden h-[500px] rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500"
+              className="group relative overflow-hidden h-[400px] sm:h-[500px] rounded-[1.5rem] sm:rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500"
             >
               <img 
                 src={project.image} 
@@ -52,18 +52,18 @@ export default function Projects() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
               
-              <div className="absolute bottom-0 left-0 p-10 w-full text-white">
-                <div className="flex items-center gap-2 text-light-blue mb-4">
-                  <MapPin size={18} />
-                  <span className="text-xs font-bold uppercase tracking-[0.1em]">{project.location}</span>
+              <div className="absolute bottom-0 left-0 p-6 sm:p-10 w-full text-white">
+                <div className="flex items-center gap-2 text-light-blue mb-3 sm:mb-4">
+                  <MapPin size={16} />
+                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em]">{project.location}</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6 leading-tight">{project.title}</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-4 sm:mb-6 leading-tight">{project.title}</h3>
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-widest bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
+                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
                     {project.status}
                   </span>
-                  <button className="w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 shadow-lg">
-                    <span className="text-xl">→</span>
+                  <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent text-white flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 shadow-lg">
+                    <span className="text-lg sm:text-xl">→</span>
                   </button>
                 </div>
               </div>

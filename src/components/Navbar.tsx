@@ -46,7 +46,7 @@ export default function Navbar({ onBookVisit }: { onBookVisit: () => void }) {
               <img
                 src="/gallery/logo navbar.png"
                 alt="ADH GROUP"
-                className="h-25 w-auto object-contain"
+                className="h-10 sm:h-20 md:h-10 w-auto object-contain transition-all"
               />
             </Link>
 
