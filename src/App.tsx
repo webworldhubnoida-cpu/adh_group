@@ -15,6 +15,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import TeamPage from './pages/TeamPage';
 import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
+import CertificatesPage from './pages/CertificatesPage';
 import FloatingActions from './components/FloatingActions';
 import BookingModal from './components/BookingModal';
 
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/team" element={<TeamPage />} />
             <Route path="/location" element={<LocationPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/certificates" element={<CertificatesPage />} />
           </Routes>
         </main>
         <Footer />

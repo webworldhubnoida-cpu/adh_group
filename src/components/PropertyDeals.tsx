@@ -43,35 +43,24 @@ const deals = [
 
 export default function PropertyDeals() {
   return (
-    <section className="py-24 bg-brand-blue-deep border-b border-brand-gold/10 overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-20 text-center max-w-3xl mx-auto">
-          <motion.span 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="editorial-section-title block mb-4"
           >
-            Transaction Excellence
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl font-serif italic text-white mb-6"
-          >
-            Property Sales & Purchase
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-brand-gray font-light leading-relaxed"
-          >
-            Navigating the Aligarh real estate market with transparency, expertise, and a commitment to securing the best value for every stakeholder.
-          </motion.p>
+            <span className="inline-block px-4 py-1 mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 rounded-full">
+              Transaction Excellence
+            </span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
+              Property Sales & <span className="text-primary">Purchase</span>
+            </h2>
+            <p className="text-slate-600 font-medium leading-relaxed">
+              Navigating the Aligarh real estate market with transparency, expertise, and a commitment to securing the best value for every stakeholder.
+            </p>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -82,81 +71,57 @@ export default function PropertyDeals() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="editorial-border bg-brand-blue relative flex flex-col group h-full overflow-hidden"
+              className="group relative flex flex-col h-full overflow-hidden bg-white rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100"
             >
               {/* Image Header */}
-              <div className="h-48 overflow-hidden relative">
+              <div className="h-64 overflow-hidden relative">
                 <img 
                   src={deal.image} 
                   alt={deal.title}
-                  className="w-full h-full object-cover "
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-brand-blue-deep/60 group-hover:bg-brand-blue-deep/20 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent opacity-60" />
                 
                 {/* Corner Accent */}
-                <div className="absolute top-0 right-0 py-2 px-6 bg-brand-gold text-brand-blue-deep text-[10px] uppercase font-bold tracking-[3px] z-10">
+                <div className="absolute top-6 right-6 py-2 px-6 bg-accent text-white text-[10px] uppercase font-bold tracking-[3px] z-10 rounded-full shadow-lg">
                   {deal.accent}
                 </div>
               </div>
 
-              <div className="p-12 pt-8 flex flex-col flex-grow">
-                <div className="mb-8 p-4 bg-brand-blue-deep inline-block editorial-border self-start">
-                  {deal.icon}
+              <div className="p-10 flex-grow flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/5 text-primary flex items-center justify-center">
+                    {index === 0 ? <TrendingUp size={28} /> : <HandCoins size={28} />}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-heading font-bold text-slate-900">{deal.title}</h3>
+                    <p className="text-sm font-bold text-primary uppercase tracking-widest mt-1">{deal.subtitle}</p>
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <span className="text-brand-gold text-xs uppercase tracking-[4px] font-medium block mb-2">{deal.subtitle}</span>
-                  <h3 className="text-3xl font-serif italic text-white">{deal.title}</h3>
-                </div>
-
-                <p className="text-brand-gray text-sm font-light leading-relaxed mb-10 flex-grow">
+                <p className="text-slate-600 font-medium leading-relaxed mb-8">
                   {deal.description}
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {deal.features.map((feature, i) => (
-                    <div key={i} className="flex items-start space-x-3 group/item">
-                      <CheckCircle2 size={16} className="text-brand-gold mt-0.5 flex-shrink-0" />
-                      <span className="text-white/80 text-xs font-light leading-snug group-hover/item:text-white transition-colors">
-                        {feature}
-                      </span>
+                <div className="grid grid-cols-1 gap-4 mt-auto">
+                  {deal.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-sm text-slate-500 font-medium">
+                      <CheckCircle2 size={18} className="text-primary shrink-0" />
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-brand-gold/10">
-                  <button className="flex items-center space-x-4 text-brand-gold hover:text-white transition-all group/btn">
-                    <span className="text-xs uppercase tracking-[4px] font-bold">Inquire About This Service</span>
-                    <div className="w-8 h-px bg-brand-gold group-hover/btn:w-12 transition-all" />
+                <div className="mt-10">
+                  <button className="w-full py-4 bg-primary text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-secondary transition-colors shadow-lg shadow-primary/10">
+                    Learn More
                   </button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Global Assurance Banner */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 bg-brand-gold p-1 flex flex-wrap items-center justify-around gap-8"
-        >
-          <div className="flex items-center space-x-3 px-8 py-3 bg-brand-blue-deep w-full flex-grow justify-center">
-            <ShieldCheck size={20} className="text-brand-gold" />
-            <span className="text-white text-[10px] uppercase tracking-[3px] font-bold">100% Legal Transparency</span>
-          </div>
-          <div className="flex items-center space-x-3 px-8 py-3 bg-brand-blue-deep w-full flex-grow justify-center">
-            <FileText size={20} className="text-brand-gold" />
-            <span className="text-white text-[10px] uppercase tracking-[3px] font-bold">Verified Paperwork</span>
-          </div>
-          <div className="flex items-center space-x-3 px-8 py-3 bg-brand-blue-deep w-full flex-grow justify-center">
-            <Gavel size={20} className="text-brand-gold" />
-            <span className="text-white text-[10px] uppercase tracking-[3px] font-bold">Fair Value Guarantee</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

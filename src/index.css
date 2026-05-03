@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Helvetica Neue", Arial, sans-serif, "Inter", ui-sans-serif;
-  --font-serif: "Georgia", serif;
+  --font-sans: "Inter", "Poppins", ui-sans-serif, system-ui;
+  --font-heading: "Poppins", "Inter", ui-sans-serif, system-ui;
   
-  --color-brand-blue: #0B1221;
-  --color-brand-blue-deep: #0f182b;
-  --color-brand-gold: #D4AF37;
-  --color-brand-gray: #A0AEC0;
+  --color-primary: #0A4D8C;
+  --color-secondary: #1E73BE;
+  --color-light-blue: #4FA3D1;
+  --color-accent: #E53935;
+  --color-bg-light: #F5F7FA;
+  
+  --background-image-gradient-main: linear-gradient(135deg, #0A4D8C, #1E73BE, #4FA3D1);
+  --background-image-gradient-cta: linear-gradient(135deg, #E53935, #FF6F61);
 }
 
 @layer base {
@@ -17,28 +21,59 @@
   }
   
   body {
-    @apply bg-brand-blue text-white font-sans antialiased;
+    @apply bg-bg-light text-slate-800 font-sans antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif italic;
+    @apply font-heading font-bold;
   }
 }
 
 @layer utilities {
-  .editorial-border {
-    @apply border border-[rgba(212,175,55,0.2)];
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border-b border-white/20;
   }
   
-  .editorial-section-title {
-    @apply text-[11px] uppercase tracking-[3px] text-brand-gold mb-4 block font-sans font-bold not-italic;
-  }
-  
-  .editorial-card {
-    @apply bg-white/5 p-6 border-l-2 border-brand-gold;
+  .card-modern {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100;
   }
 
-  .editorial-glass {
-    @apply bg-brand-blue/90 backdrop-blur-md border-b border-[rgba(212,175,55,0.2)];
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition-colors duration-300;
+  }
+
+  .btn-cta {
+    @apply bg-gradient-cta text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300;
+  }
+
+  /* Google Translate Styling to match user image */
+  #google_translate_element {
+    @apply !bg-white/5 !border !border-white/10 !rounded-xl !p-4 !w-full !max-w-[240px];
+  }
+
+  .goog-te-gadget {
+    @apply !font-sans !text-[12px] !text-white/40 !uppercase !tracking-widest !m-0;
+  }
+
+  .goog-te-gadget select {
+    @apply !bg-primary !border !border-white/20 !rounded-lg !text-white/80 !py-2 !px-3 !w-full !mb-2 !outline-none !cursor-pointer hover:!border-white/40 transition-colors;
+  }
+
+  .goog-te-gadget .goog-logo-link {
+    @apply !inline-flex !items-center !gap-1 !text-white/40 !normal-case !font-normal !tracking-normal !mt-1;
+  }
+
+  .goog-te-gadget .goog-logo-link img {
+    @apply !brightness-0 !invert !opacity-60 !h-3;
+  }
+
+  /* Hide Google attribution bar at top */
+  .goog-te-banner-frame {
+    @apply !hidden;
+  }
+
+  body {
+    top: 0 !important;
   }
 }
+

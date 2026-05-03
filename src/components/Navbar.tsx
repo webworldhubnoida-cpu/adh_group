@@ -1,12 +1,8 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
+import TopHeader from './TopHeader';
 
 export default function Navbar({ onBookVisit }: { onBookVisit: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +11,7 @@ export default function Navbar({ onBookVisit }: { onBookVisit: () => void }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -32,116 +28,113 @@ export default function Navbar({ onBookVisit }: { onBookVisit: () => void }) {
   ];
 
   return (
-    <>
-      <nav className="fixed w-full z-50 transition-all duration-300">
-        {/* Editorial Topbar */}
-        <div className={`hidden md:block bg-brand-blue-deep border-b border-white/5 py-2 transition-all duration-300 ${isScrolled ? 'opacity-0 h-0 py-0 overflow-hidden' : 'opacity-100'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[9px] uppercase font-bold tracking-[3px] text-white/50">
-            <div className="flex gap-6 items-center">
-              <span className="flex items-center gap-2">
-                <span className="w-1 h-1 bg-brand-gold rounded-full" />
-                Aligarh, Uttar Pradesh
-              </span>
-              <a href="tel:+917900990004" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
-                <Phone size={10} className="text-brand-gold" /> +91 7900990004
-              </a>
-            </div>
-            <div className="flex gap-5 items-center">
-              <span className="text-brand-gold/30">Connect:</span>
-              <a href="#" className="hover:text-brand-gold transition-colors"><Instagram size={12} /></a>
-              <a href="#" className="hover:text-brand-gold transition-colors"><Facebook size={12} /></a>
-              <a href="#" className="hover:text-brand-gold transition-colors"><Twitter size={12} /></a>
-              <a href="#" className="hover:text-brand-gold transition-colors"><Linkedin size={12} /></a>
-            </div>
-          </div>
-        </div>
+    <nav className="sticky top-0 w-full z-50">
+      <TopHeader />
+      {/* MAIN NAVBAR */}
+      <div
+        className={`transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white shadow-md border-b border-gray-200 py-2'
+            : 'bg-white py-4'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
 
-        <div className={`${isScrolled ? 'editorial-glass py-3' : 'bg-transparent py-5 border-b border-white/5'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center">
+            {/* LOGO */}
             <Link to="/" className="flex-shrink-0">
-              <img 
-                src="/gallery/logo navbar.png" 
-                alt="ADH GROUP" 
+              <img
+                src="/gallery/logo navbar.png"
+                alt="ADH GROUP"
                 className="h-25 w-auto object-contain"
               />
             </Link>
-            
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    className={`px-3 py-2 text-sm font-medium transition-colors duration-200 uppercase tracking-widest ${
-                      location.pathname === link.href ? 'text-brand-gold' : 'text-white hover:text-brand-gold'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+
+            {/* DESKTOP NAV */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`relative text-sm font-semibold transition-all ${
+                    location.pathname === link.href
+                      ? 'text-black'
+                      : 'text-gray-600 hover:text-black'
+                  }`}
+                >
+                  {link.name}
+
+                  {/* Active underline */}
+                  {location.pathname === link.href && (
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-black rounded-full"></span>
+                  )}
+                </Link>
+              ))}
             </div>
 
+            {/* CTA BUTTON */}
             <div className="hidden md:flex items-center space-x-4">
-              <button 
+              <button
                 onClick={onBookVisit}
-                className="bg-brand-gold hover:bg-brand-gold-dark text-brand-blue px-6 py-2 rounded-none font-bold text-sm transition-all duration-300 transform hover:scale-105 uppercase tracking-tighter shadow-lg cursor-pointer"
+                className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all shadow-sm"
               >
                 Book Visit
               </button>
             </div>
 
+            {/* MOBILE MENU BUTTON */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white hover:text-brand-gold transition-colors focus:outline-none"
+                className="text-gray-800"
               >
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
+                {isOpen ? <X size={26} /> : <Menu size={26} />}
               </button>
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-brand-blue border-t border-white/10"
-            >
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-4 text-base font-medium border-b border-white/5 last:border-0 ${
-                      location.pathname === link.href ? 'text-brand-gold' : 'text-white hover:text-brand-gold'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <div className="pt-4 pb-2 px-3">
-                  <button
-                    onClick={() => {
-                      setIsOpen(false);
-                      onBookVisit();
-                    }}
-                    className="block w-full text-center bg-brand-gold text-brand-blue py-3 font-bold uppercase tracking-widest cursor-pointer"
-                  >
-                    Enquire Now
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </>
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            className="md:hidden bg-white border-t border-gray-200 shadow-lg"
+          >
+            <div className="px-4 py-5 space-y-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3 rounded-lg font-medium ${
+                    location.pathname === link.href
+                      ? 'bg-gray-100 text-black'
+                      : 'text-gray-600 hover:bg-gray-50'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  onBookVisit();
+                }}
+                className="w-full mt-3 bg-black text-white py-3 rounded-lg font-semibold"
+              >
+                Book Visit
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </nav>
   );
 }

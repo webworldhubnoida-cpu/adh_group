@@ -7,6 +7,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
 import Projects from '../components/Projects';
+import FloorPlan from '../components/FloorPlan';
 import Team from '../components/Team';
 import Market from '../components/Market';
 import VisualImpact from '../components/VisualImpact';
@@ -20,14 +21,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="py-12 bg-brand-blue-deep border-b border-brand-gold/10">
+      <div className="py-12 bg-primary border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-brand-gray font-light tracking-[2px] text-sm uppercase">Pioneering Architectural Excellence in Aligarh</p>
+          <p className="text-white/70 font-bold tracking-[0.2em] text-xs uppercase">Pioneering Architectural Excellence in Aligarh</p>
         </div>
       </div>
       <About />
       <Services />
       <Projects />
+      <FloorPlan />
       <VisualImpact />
     
       <LocationAdvantage />

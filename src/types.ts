@@ -47,3 +47,15 @@ export interface Review {
   comment: string;
   image?: string;
 }
+
+export interface FloorPlan {
+  title: string;
+  image: string;
+}
+
+declare global {
+  interface Window {
+    googleTranslateElementInit: () => void;
+    google: any;
+  }
+}

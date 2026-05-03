@@ -16,9 +16,9 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-24 bg-brand-blue border-b border-brand-gold/10 overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
           
           {/* FAQ Image Side */}
           <div className="lg:col-span-4 hidden lg:block sticky top-32">
@@ -27,18 +27,18 @@ export default function FAQ() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="editorial-border overflow-hidden relative"
+              className="rounded-[3rem] overflow-hidden relative shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1541888941259-7b9d9ef77c25?auto=format&fit=crop&q=80&w=800" 
+                src="gallery/p3.jpeg" 
                 alt="Architectural Detail"
-                className="w-full h-[600px] object-cover grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-1000"
+                className="w-full h-[650px] object-cover opacity-90 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-deep via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-brand-gold font-serif italic text-xl">"Excellence is not an act, but a habit."</p>
-                <div className="w-12 h-0.5 bg-brand-gold mt-4" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
+              <div className="absolute bottom-10 left-10 right-10">
+                <p className="text-white font-heading font-bold text-2xl italic leading-relaxed">"Excellence is not an act, but a habit."</p>
+                <div className="w-16 h-1 bg-accent mt-6 rounded-full" />
               </div>
             </motion.div>
           </div>
@@ -50,7 +50,7 @@ export default function FAQ() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="editorial-section-title block mb-4"
+                className="inline-block px-4 py-1 mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 rounded-full"
               >
                 Insights & Clarity
               </motion.span>
@@ -59,13 +59,13 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl font-serif italic text-white"
+                className="text-4xl md:text-5xl font-heading font-bold text-slate-900"
               >
-                Frequently Asked Questions
+                Frequently Asked <span className="text-primary">Questions</span>
               </motion.h2>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {FAQS.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -73,20 +73,20 @@ export default function FAQ() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="editorial-border bg-brand-blue-deep group"
+                  className={`rounded-3xl border transition-all duration-300 ${activeIndex === index ? 'bg-primary border-primary shadow-xl shadow-primary/20' : 'bg-bg-light border-slate-100 hover:border-primary/30'}`}
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full px-8 py-7 flex items-center justify-between text-left focus:outline-none"
                   >
-                    <span className="text-lg font-serif italic text-white group-hover:text-brand-gold transition-colors duration-300">
+                    <span className={`text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-white' : 'text-slate-800'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: activeIndex === index ? 180 : 0 }}
-                      className="text-brand-gold"
+                      className={activeIndex === index ? 'text-white' : 'text-primary'}
                     >
-                      <ChevronDown size={20} />
+                      <ChevronDown size={24} />
                     </motion.div>
                   </button>
                   
@@ -100,8 +100,8 @@ export default function FAQ() {
                         className="overflow-hidden"
                       >
                         <div className="px-8 pb-8">
-                          <div className="w-full h-px bg-brand-gold/10 mb-6" />
-                          <p className="text-brand-gray font-light leading-relaxed max-w-2xl">
+                          <div className={`w-full h-px mb-6 ${activeIndex === index ? 'bg-white/10' : 'bg-slate-200'}`} />
+                          <p className={`font-medium leading-relaxed max-w-2xl ${activeIndex === index ? 'text-white/80' : 'text-slate-600'}`}>
                             {faq.answer}
                           </p>
                         </div>
@@ -119,8 +119,8 @@ export default function FAQ() {
               transition={{ delay: 0.5 }}
               className="mt-16 text-center lg:text-left"
             >
-              <p className="text-white/40 text-sm font-light tracking-widest uppercase">
-                Have more questions? <a href="/contact" className="text-brand-gold hover:underline underline-offset-4 transition-all">Connect with our team</a>
+              <p className="text-slate-400 text-sm font-bold tracking-widest uppercase">
+                Have more questions? <a href="/contact" className="text-primary hover:text-accent transition-all border-b border-primary/20 hover:border-accent">Connect with our team</a>
               </p>
             </motion.div>
           </div>

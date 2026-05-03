@@ -27,7 +27,7 @@ export default function FloatingActions() {
         href="tel:+917900990004"
         whileHover={{ scale: 1.1, x: -5 }}
         whileTap={{ scale: 0.9 }}
-        className="w-14 h-14 bg-brand-gold text-brand-blue rounded-full flex items-center justify-center shadow-2xl border border-white/20"
+        className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl border border-white/20"
         title="Call Us"
       >
         <Phone size={24} />

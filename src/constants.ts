@@ -3,7 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { TeamCategory, Project, Service, FAQItem, Review } from './types.ts';
+import { TeamCategory, Project, Service, FAQItem, Review, FloorPlan } from './types.ts';
+
+export const FLOOR_PLANS: FloorPlan[] = [
+  { title: "Floor Plan A", image: "/gallery/a.png" },
+  { title: "Floor Plan B", image: "/gallery/b.png" },
+  { title: "Floor Plan C", image: "/gallery/c.png" },
+  { title: "Floor Plan E", image: "/gallery/e.png" },
+  { title: "Floor Plan F", image: "/gallery/f.png" },
+];
 
 export const TEAM_DATA: TeamCategory[] = [
   {

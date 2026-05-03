@@ -8,97 +8,97 @@ import { TEAM_DATA } from '../constants.ts';
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-brand-blue relative">
+    <section id="team" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
           <div>
-            <span className="editorial-section-title">Our Leadership</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-medium text-white italic">
+            <span className="inline-block px-4 py-1 mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 rounded-full">
+              Our Leadership
+            </span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900">
               The Minds Behind <br />
-              ADH Group Success
+              <span className="text-primary">ADH Group Success</span>
             </h2>
           </div>
-          <p className="max-w-md text-brand-gray font-light text-lg">
-            Our team brings together decades of expertise in architecture, engineering, and management.
+          <p className="max-w-md text-slate-600 font-medium text-lg">
+            Our team brings together decades of expertise in architecture, engineering, and strategic management.
           </p>
         </div>
 
-        <div className="space-y-16">
-          {TEAM_DATA.map((category, catIndex) => (
-            <div key={category.title} className="space-y-6">
-              <div className="flex items-center gap-4">
-                <h3 className="text-sm uppercase tracking-[3px] font-bold text-brand-gold min-w-max">
-                  {category.title}
-                </h3>
-                <div className="w-full h-[1px] bg-brand-gold/10" />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {category.members.map((member, memIndex) => (
-                  <motion.div
-                    key={`${category.title}-${member.name}-${memIndex}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: memIndex * 0.1 }}
-                    className="editorial-card group"
-                  >
-                    <div className="relative aspect-[3/4] mb-4 overflow-hidden bg-brand-blue-deep border border-brand-gold/10">
-                      {member.image ? (
-                        <img 
-                          src={member.image} 
-                          alt={member.name} 
-                          className="w-full h-full object-cover "
-                          referrerPolicy="no-referrer"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-4xl font-serif italic text-brand-gold opacity-10">ADH</span>
-                        </div>
-                      )}
+        <div className="relative overflow-hidden">
+          <motion.div 
+            className="flex gap-8 w-max"
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 40,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            {[...TEAM_DATA.flatMap(cat => cat.members), ...TEAM_DATA.flatMap(cat => cat.members)].map((member, index) => (
+              <div
+                key={`${member.name}-${index}`}
+                className="w-[280px] md:w-[320px] group flex-shrink-0"
+              >
+                <div className="relative aspect-[3/4] mb-6 overflow-hidden rounded-[2rem] bg-bg-light shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                  {member.image ? (
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-4xl font-heading font-bold text-primary/10">ADH</span>
                     </div>
-                    <div className="text-left">
-                      <h4 className="text-base font-bold text-white group-hover:text-brand-gold transition-colors duration-300">
-                        {member.name}
-                      </h4>
-                      <p className="text-[10px] text-brand-gold font-bold uppercase tracking-[2px] mt-1">
-                        {member.role}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="text-left px-2">
+                  <h4 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors duration-300">
+                    {member.name}
+                  </h4>
+                  <p className="text-xs text-accent font-bold uppercase tracking-widest mt-2">
+                    {member.role}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </motion.div>
         </div>
 
         {/* Leadership in Action Gallery */}
-        <div className="mt-32 pt-24 border-t border-brand-gold/10">
+        <div className="mt-32 pt-24 border-t border-slate-100">
           <div className="mb-16">
-            <span className="editorial-section-title">Visual Legacy</span>
-            <h2 className="text-4xl font-serif italic text-white">Leadership in Action</h2>
+            <span className="inline-block px-4 py-1 mb-4 text-xs font-bold uppercase tracking-[0.2em] text-primary bg-primary/5 rounded-full">
+              Visual Legacy
+            </span>
+            <h2 className="text-4xl font-heading font-bold text-slate-900">Leadership in Action</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-brand-gold/20">
-            <div className="aspect-video bg-brand-blue-deep group overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="aspect-video rounded-[2rem] overflow-hidden shadow-xl group">
                <img 
-                 src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=800" 
-                 className="w-full h-full object-cover opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+                 src="gallery/p1.jpeg" 
+                 className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                  referrerPolicy="no-referrer"
                  alt="Construction Site Site"
                />
             </div>
-            <div className="aspect-video bg-brand-blue-deep group overflow-hidden">
+            <div className="aspect-video rounded-[2rem] overflow-hidden shadow-xl group">
                <img 
-                 src="https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=800" 
-                 className="w-full h-full object-cover opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+                 src="gallery/hero1.jpeg" 
+                 className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                  referrerPolicy="no-referrer"
                  alt="Meeting Room"
                />
             </div>
-            <div className="aspect-video bg-brand-blue-deep group overflow-hidden">
+            <div className="aspect-video rounded-[2rem] overflow-hidden shadow-xl group">
                <img 
-                 src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" 
-                 className="w-full h-full object-cover opacity-30 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+                 src="gallery/hero2.png" 
+                 className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
                  referrerPolicy="no-referrer"
                  alt="Engineering"
                />
