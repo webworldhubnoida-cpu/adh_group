@@ -113,9 +113,9 @@ export const PROJECTS: Project[] = [
     image: "/gallery/p4.png",
     description: "Premium residential living in the heart of the city.",
     advantages: {
-      schools: ["Al Barkat School", "Iqra Schools"],
-      hospitals: ["Vaqar Hospital", "Malik Hospital"],
-      markets: ["Center Point Market", "Great Value Mall"],
+      schools: ["Al Barkat School", "Iqra Schools","Aligarh Muslim University"],
+      hospitals: ["Vaqar Hospital", "Malik Hospital" ,"JNMC medical college","AMU Hospital"],
+      markets: ["Dodhpur","Center Point Market", "Great Value Mall"],
       connectivity: ["5 mins to Railway Station", "Near GT Road"]
     }
   },

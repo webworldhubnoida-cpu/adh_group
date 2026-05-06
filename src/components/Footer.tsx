@@ -142,8 +142,7 @@ export default function Footer() {
                   rel="noopener noreferrer" 
                   className="text-sm text-white/60 leading-relaxed font-medium hover:text-white transition-colors text-center sm:text-left"
                 >
-                  A.D.H. GROUP, Aligarh<br />
-                  Uttar Pradesh, India - 202001
+                Dhorra Mafi Bypass Infront KR Garden Aligarh
                 </a>
               </li>
               <li className="flex flex-col sm:flex-row gap-4 items-center sm:items-center group">
