@@ -6,11 +6,11 @@
 import { TeamCategory, Project, Service, FAQItem, Review, FloorPlan } from './types.ts';
 
 export const FLOOR_PLANS: FloorPlan[] = [
-  { title: "Floor Plan A", image: "/gallery/a.png" },
-  { title: "Floor Plan B", image: "/gallery/b.png" },
-  { title: "Floor Plan C", image: "/gallery/c.png" },
-  { title: "Floor Plan E", image: "/gallery/e.png" },
-  { title: "Floor Plan F", image: "/gallery/f.png" },
+  { title: "ADH Greens Floor Plan ", image: "/gallery/a.png" },
+  { title: "ADH Greens Floor Plan ", image: "/gallery/b.png" },
+  { title: "ADH Greens Floor Plan", image: "/gallery/c.png" },
+  { title: "ADH Greens Floor Plan", image: "/gallery/e.png" },
+  { title: "ADH Homes Duplex Floor Plan ", image: "/gallery/f.png" },
 ];
 
 export const TEAM_DATA: TeamCategory[] = [
@@ -107,20 +107,20 @@ export const SERVICES: Service[] = [
 
 export const PROJECTS: Project[] = [
   {
-    title: "ADH Green",
+    title: "ADH Greens Phase 2",
     location: "Aligarh, UP",
-    status: "Completed",
+    status: "Upcoming",
     image: "/gallery/p4.png",
     description: "Premium residential living in the heart of the city.",
     advantages: {
-      schools: ["Blue Bird School", "Aligarh Muslim University Schools"],
-      hospitals: ["JN Medical College", "Varshney Hospital"],
+      schools: ["Al Barkat School", "Iqra Schools"],
+      hospitals: ["Vaqar Hospital", "Malik Hospital"],
       markets: ["Center Point Market", "Great Value Mall"],
       connectivity: ["5 mins to Railway Station", "Near GT Road"]
     }
   },
   {
-    title: "ADH Home",
+    title: "ADH Home Phase 2",
     location: "Civic Center, Aligarh",
     status: "Completed",
     image: "/gallery/p3.jpeg",

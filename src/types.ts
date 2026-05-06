@@ -17,7 +17,7 @@ export interface TeamCategory {
 export interface Project {
   title: string;
   location: string;
-  status: 'Completed' | 'Ongoing';
+  status: 'Completed' | 'Ongoing' | 'Upcoming';
   image: string;
   description?: string;
   advantages?: {
