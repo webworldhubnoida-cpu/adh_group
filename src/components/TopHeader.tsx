@@ -16,13 +16,17 @@ export default function TopHeader() {
               <span>Info@adhgroup.in</span>
             </a>
             <div className="flex items-center gap-3 sm:gap-4">
-              <a href="tel:+918937946287" className="flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
+              <a href="tel:+917900990004" className="flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
                 <Phone size={14} className="text-light-blue group-hover:scale-110 transition-transform" />
-                <span>+91 8937946287</span>
+                <span>+91 7900990004</span>
+
               </a>
-              <a href="tel:+919837946287" className="hidden xs:flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group border-l border-white/10 pl-3 sm:pl-4">
-                <span>+91 9837946287</span>
+                <a href="tel:+919837946287" className="flex items-center gap-2 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hover:text-light-blue transition-colors group">
+                <Phone size={14} className="text-light-blue group-hover:scale-110 transition-transform" />
+                                <span>+91 9837946287</span>
+
               </a>
+           
             </div>
           </div>
 

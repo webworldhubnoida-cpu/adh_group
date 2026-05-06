@@ -66,13 +66,13 @@ export default function Contact() {
                 <div className="group">
                   <p className="text-[10px] uppercase tracking-[3px] text-white/40 font-bold mb-4">Call / WhatsApp</p>
                   <div className="flex flex-col gap-4">
-                  
+                  <a href="https://wa.me/917900990004" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-blue transition-colors text-2xl font-bold">
+                      +91 7900990004
+                    </a>
                     <a href="https://wa.me/919837946287" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-blue transition-colors text-2xl font-bold">
                       +91 9837946287
                     </a>
-                    <a href="https://wa.me/917900990004" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-blue transition-colors text-2xl font-bold">
-                      +91 7900990004
-                    </a>
+                    
                   </div>
                 </div>
 
