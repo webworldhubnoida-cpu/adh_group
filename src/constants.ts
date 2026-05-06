@@ -6,10 +6,10 @@
 import { TeamCategory, Project, Service, FAQItem, Review, FloorPlan } from './types.ts';
 
 export const FLOOR_PLANS: FloorPlan[] = [
-  { title: "ADH Greens Floor Plan ", image: "/gallery/a.png" },
-  { title: "ADH Greens Floor Plan ", image: "/gallery/b.png" },
-  { title: "ADH Greens Floor Plan", image: "/gallery/c.png" },
-  { title: "ADH Greens Floor Plan", image: "/gallery/e.png" },
+  { title: "ADH Greens Floor Plan-A", image: "/gallery/a.png" },
+  { title: "ADH Greens Floor Plan-B", image: "/gallery/b.png" },
+  { title: "ADH Greens Floor Plan-C", image: "/gallery/c.png" },
+  { title: "ADH Greens Floor Plan-D", image: "/gallery/e.png" },
   { title: "ADH Homes Duplex Floor Plan ", image: "/gallery/f.png" },
 ];
 
