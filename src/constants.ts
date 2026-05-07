@@ -112,6 +112,7 @@ export const PROJECTS: Project[] = [
     status: "Upcoming",
     image: "/gallery/p4.png",
     description: "Premium residential living in the heart of the city.",
+    brochure: "/gallery/ADH GREEN'S.pdf",
     advantages: {
       schools: ["Al Barkat School", "Iqra Schools","Aligarh Muslim University"],
       hospitals: ["Vaqar Hospital", "Malik Hospital" ,"JNMC medical college","AMU Hospital"],
@@ -151,6 +152,7 @@ export const PROJECTS: Project[] = [
     status: "Completed",
     image: "/gallery/hero2.png",
     description: "Strategic commercial space for modern enterprises.",
+    brochure: "/gallery/adh homes.pdf",
     advantages: {
       schools: ["Delhi Public School Aligarh", "The Blossoms School"],
       hospitals: ["Malkhan Singh Hospital", "ESI Hospital"],

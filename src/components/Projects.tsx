@@ -4,7 +4,7 @@
  */
 
 import { motion } from 'motion/react';
-import { MapPin } from 'lucide-react';
+import { MapPin, Download } from 'lucide-react';
 import { PROJECTS } from '../constants.ts';
 
 export default function Projects() {
@@ -62,9 +62,22 @@ export default function Projects() {
                   <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest bg-white/10 backdrop-blur-md border border-white/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
                     {project.status}
                   </span>
-                  <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent text-white flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 shadow-lg">
-                    <span className="text-lg sm:text-xl">→</span>
-                  </button>
+                  <div className="flex gap-3">
+                    {project.brochure && (
+                      <a 
+                        href={project.brochure} 
+                        download 
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transform transition-all duration-300 hover:bg-accent hover:border-accent group-hover:scale-110 shadow-lg"
+                        title="Download Brochure"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Download size={18} />
+                      </a>
+                    )}
+                    <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent text-white flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 shadow-lg">
+                      <span className="text-lg sm:text-xl">→</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>

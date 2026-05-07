@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Download } from "lucide-react";
 
 const images = [
   "/gallery/hero4.jpeg",
@@ -81,6 +82,15 @@ export default function Hero() {
             >
               Contact Us
             </button>
+
+            <a 
+              href="/gallery/ADH GREEN'S.pdf"
+              download
+              className="w-full sm:w-auto bg-accent text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs hover:bg-accent/80 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2"
+            >
+              <Download size={16} />
+              Brochure
+            </a>
           </div>
 
         </div>

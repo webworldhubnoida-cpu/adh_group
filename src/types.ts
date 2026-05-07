@@ -20,6 +20,7 @@ export interface Project {
   status: 'Completed' | 'Ongoing' | 'Upcoming';
   image: string;
   description?: string;
+  brochure?: string;
   advantages?: {
     schools: string[];
     hospitals: string[];
