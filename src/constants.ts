@@ -16,11 +16,16 @@ export const FLOOR_PLANS: FloorPlan[] = [
 export const TEAM_DATA: TeamCategory[] = [
   {
     title: "Founder",
+<<<<<<< HEAD
     members: [{ name: "Asif Ali", role: "Founder", image: "/gallery/owner.jpeg" }]
+=======
+    members: [{ name: "Asif Ali Khan", role: "Founder", image: "/gallery/owner.jpeg" }]
+>>>>>>> f7ec666 (Initial Commit)
   },
   {
     title: "Co-Founders",
     members: [
+<<<<<<< HEAD
       { name: "Asif Ali", role: "Co-Founder", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" },
       { name: "Asad Jameel", role: "Co-Founder", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" }
     ]
@@ -31,15 +36,40 @@ export const TEAM_DATA: TeamCategory[] = [
       { name: "Salman Haider", role: "Engineer", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" },
       { name: "Mohd Faaz", role: "Engineer", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" },
       { name: "Shamim Ahmad", role: "Engineer", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400" }
+=======
+      { name: "Asif Ali", role: "Co-Founder", image: "/team/AsifAliCoFounder.jpeg" },
+      { name: "Syed Asad Jamil", role: "Managing Partner", image: "/gallery/SayedAsadJamil.jpeg" },
+      { name: "Dr. Mohammad Asim", role: "Managing Partner", image: "/team/DrMohammadAsimManagingPartner.jpeg" }
+    ]
+  },
+  {
+    title: "Project Manager",
+    members: [{ name: "Kamal Barkat Ansari", role: "Project Manager", image: "/team/dummyBoy.png" }]
+  },
+  {
+    title: "Engineers",
+    members: [
+      { name: "Salman Haider", role: "Engineer", image: "/gallery/salmanHaider.jpeg" },
+      { name: "Mohd Faaz", role: "Engineer", image: "/team/dummyBoy.png" },
+      { name: "Shamim Ahmad", role: "Engineer", image: "/team/dummyBoy.png" }
+>>>>>>> f7ec666 (Initial Commit)
     ]
   },
   {
     title: "Architect",
+<<<<<<< HEAD
     members: [{ name: "Mohd Arif", role: "Architect", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400" }]
+=======
+    members: [
+      { name: "Mohd Arif", role: "Architect", image: "/team/MohdArifArchitect.jpeg" },
+      { name: "Mohammad Ashraf", role: "Architect", image: "/team/MohammadAshrafArchitect.jpeg" }
+    ]
+>>>>>>> f7ec666 (Initial Commit)
   },
   {
     title: "Interior Designers",
     members: [
+<<<<<<< HEAD
       { name: "Imran Chaudhary", role: "Interior Designer", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" },
       { name: "Salman Ahmad", role: "Interior Designer", image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&q=80&w=400" }
     ]
@@ -55,19 +85,45 @@ export const TEAM_DATA: TeamCategory[] = [
   {
     title: "Administration",
     members: [{ name: "Sheeba Khan", role: "Administration", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400" }]
+=======
+      { name: "Imran Chaudhary", role: "Interior Designer", image: "/gallery/MohdImran.jpeg" },
+      { name: "Salman Ahmad", role: "Interior Designer", image: "/team/dummyBoy.png" }
+    ]
+  },
+  {
+    title: "Accountant",
+    members: [{ name: "Mohd Sajid Farooq", role: "Accountant", image: "/team/MohdSajidFarooqAccountant.jpeg" }]
+  },
+  {
+    title: "Accountant",
+    members: [{ name: "Mohd Shahroz", role: "Accountant", image: "/gallery/MohdShahroz.jpeg" }]
+  },
+  {
+    title: "Administration",
+    members: [{ name: "Sheeba Khan", role: "Administration", image: "/team/dummyGirl.avif" }]
+>>>>>>> f7ec666 (Initial Commit)
   },
   {
     title: "Sales Staff",
     members: [
+<<<<<<< HEAD
       { name: "Rukhsar Khan", role: "Sales Staff", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" },
       { name: "Mehak Khan", role: "Sales Staff", image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=400" }
+=======
+      { name: "Rukhsar Khan", role: "Sales Staff", image: "/team/dummyGirl.avif" },
+      { name: "Mehak Khan", role: "Sales Staff", image: "/team/dummyBoy.png" }
+>>>>>>> f7ec666 (Initial Commit)
     ]
   },
   {
     title: "HR",
     members: [
+<<<<<<< HEAD
       { name: "Noor Saba", role: "HR", image: "https://images.unsplash.com/photo-1567532939604-b6c5b0ad2e01?auto=format&fit=crop&q=80&w=400" },
       { name: "Asif Ali Khan", role: "HR", image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=400" }
+=======
+      { name: "Noor Saba", role: "HR", image: "/team/dummyGirl.avif" },
+>>>>>>> f7ec666 (Initial Commit)
     ]
   }
 ];
@@ -83,7 +139,11 @@ export const SERVICES: Service[] = [
     title: "Construction Services",
     description: "Expert engineering and quality construction ensuring every brick laid is a testament to durability and trust.",
     icon: "HardHat",
+<<<<<<< HEAD
     image: "https://tse4.mm.bing.net/th/id/OIP.M2v4PkVAhFa50tij4VW6CwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+=======
+    image: "/gallery/c1.webp"
+>>>>>>> f7ec666 (Initial Commit)
   },
   {
     title: "Interior Design",
