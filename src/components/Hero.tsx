@@ -84,11 +84,7 @@ export default function Hero() {
             </button>
 
             <a 
-<<<<<<< HEAD
-              href="/gallery/ADH GREEN'S.pdf"
-=======
               href="/gallery/NewBroucher30_9_26.pdf"
->>>>>>> f7ec666 (Initial Commit)
               download
               className="w-full sm:w-auto bg-accent text-white px-8 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs hover:bg-accent/80 transition-all shadow-lg active:scale-95 flex items-center justify-center gap-2"
             >

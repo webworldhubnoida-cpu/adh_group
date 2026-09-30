@@ -22,10 +22,7 @@ export default function Navbar({ onBookVisit }: { onBookVisit: () => void }) {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
-<<<<<<< HEAD
-=======
     { name: 'Resale Property', href: '/resale_property'},
->>>>>>> f7ec666 (Initial Commit)
     { name: 'Team', href: '/team' },
     { name: 'Location', href: '/location' },
     { name: 'Contact', href: '/contact' },

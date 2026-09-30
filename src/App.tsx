@@ -18,10 +18,8 @@ import ContactPage from './pages/ContactPage';
 import CertificatesPage from './pages/CertificatesPage';
 import FloatingActions from './components/FloatingActions';
 import BookingModal from './components/BookingModal';
-<<<<<<< HEAD
-=======
 import ResaleProperty from './pages/ResaleProperty';
->>>>>>> f7ec666 (Initial Commit)
+
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -37,10 +35,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-<<<<<<< HEAD
-=======
             <Route path="/resale_property" element={<ResaleProperty />} />
->>>>>>> f7ec666 (Initial Commit)
             <Route path="/team" element={<TeamPage />} />
             <Route path="/location" element={<LocationPage />} />
             <Route path="/contact" element={<ContactPage />} />
