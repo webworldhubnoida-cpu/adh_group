@@ -161,7 +161,7 @@ const ResaleProperty = () => {
           <div className="absolute inset-0 bg-black/55" />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full items-center justify-center px-4 text-center">
+          <div className="relative z-11 flex h-full items-center justify-center px-4 text-center">
             <div className="max-w-3xl text-white">
               <span className="mb-4 inline-block rounded-full bg-orange-500 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em]">
                 Find Your Perfect Property
